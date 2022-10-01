@@ -5,7 +5,7 @@
 `< Visual Studio Code 폰트 설정 >`
 
 > ```bash
-> 파일 -> 기본설정 -> 설정
+> # 파일 -> 기본설정 -> 설정
 >
 > `terminal.integrated.fontFamily` 항목의 값을
 > 'MesloLGS NF' 로 변경 따옴표 `'` 를 빠뜨리면 안된다
