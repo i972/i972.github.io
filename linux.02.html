@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Linux SSHFS</title>
+  </head>
+  <body>
+    <h1><a href="index.html">Hakuna Matata</a></h1>
+    <div id="grid">
+      <ol>
+        <li><a href="linux.html">Linux</a></li>
+        <li><a href="vscode.html">Visual Studio Code</a></li>
+        <li><a href="3.html">JavaScript</a></li>
+      </ol>
+      <div id="article">
+        <h2>Linux</h2>
+        <img src="images/ftp.png" alt="ok" width="40%" /><br />
+        <ul>
+          <li><a href="linux.01.html">리눅스 Font 삭제</a></li>
+          <li><a href="linux.02.html">리눅스 원격 디렉토리 마운트 SSHFS</a></li>
+        </ul>
+        <br /><br /><br />
+        <hr />
+        <h3>1. 리눅스 원격 디렉토리 마운트 SSHFS</h3>
+        <p>
+          SSH 파일 시스템(SSH Filesystem)은 SSH 연결을 통해 원격 디렉터리를
+          마운트하기 위한 FUSE 기반 파일 시스템 클라이언트, SFTP 프로토콜을
+          사용하고 있으며 대부분의 SSH 서버에서 기본적으로 사용하도록 설정되어
+          있어 서버 측에서 추가 구성을 할 필요가 없는게 장점이다
+        </p>
+        <h4>< SSHFS 설치 ></h4>
+        <pre><br>
+          <strong>sudo apt install sshfs</strong><br>
+        </pre>
+        <h4>< SSHFS 원격 파일 시스템 마운트 ></h4>
+        <pre><br>
+          # user@host : 접속할 서버의 사용자 ID @ 접속할 서버의 주소
+          # remote_derectory : 마운트할 서버의 디렉토리  
+          # mountpoint : 마운트할 로컬 디렉<br>
+          <strong>sshfs [user@]host:[remote_directory] mountpoint [options]</strong>
+          <strong>sshfs i972@192.168.0.2:/home/i972 ~/문서/hp_envy_6</strong><br>
+          # hp 는 ./ssh/config 파일에 정의 되어 있다
+          <strong>sshfs hp:/home/i972 ~/문서/hp_envy_6</strong><br>
+        </pre>
+        <h4>< SSHFS 자동 마운트 ></h4>
+        <pre><br>
+          # 원격 디렉토리를 영구적으로 마운트하려면 로컬 시스템의 /etc/fstab 
+          # 파일을 편집하고 새 마운트 항목을 추가
+          # 이렇게 하면 시스템이 부팅될 때 원격 디렉터리가 자동으로 마운트 된다<br> 
+          <strong>vi /etc/fstab</strong><br>
+          # /remote/dir : 접속할 서버의 디렉토리
+          # /local/mountpoint : 로컬 디렉토리
+          # fuse.sshfs : 파일 시스템 유형<br>
+          <strong>user@host:/remote/dir  /local/mountpoint  fuse.sshfs  defaults  0  0</strong><br>
+        </pre>
+        <h4>< SSHFS 마운트 확인 및 헤제 ></h4>
+        <pre><br>
+          # 마운트 확인
+          <strong>df -h</strong><br>
+          # 마운트된 파일 시스템을 분리 하려면 umount, fusermount
+          # 명령 뒤에 마운트된 디렉터리(mount point)를 지정 하면 된다<br>
+          <strong>umount /local/mountpoint</strong>
+          <strong>fusermount -u /local/mountpoint</strong><br>
+        </pre>
+        <br />
+        <h3>2. 참고자료</h3>
+        <ul>
+          <li>
+            <a href="https://jjeongil.tistory.com/1580"
+              >Linux : SSH : 원격 디렉토리 마운트 : SSHFS 사용 방법, 예제,
+              명령어</a
+            >
+          </li>
+        </ul>
+        <br />
+      </div>
+    </div>
+  </body>
+</html>
