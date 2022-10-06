@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Linux</title>
+  </head>
+  <body>
+    <h1><a href="index.html">Hakuna Matata</a></h1>
+    <div id="grid">
+      <ol>
+        <li><a href="linux.html">Linux</a></li>
+        <li><a href="vscode.html">Visual Studio Code</a></li>
+        <li><a href="">JavaScript</a></li>
+      </ol>
+      <div id="article">
+        <h2>Linux</h2>
+        <img src="images/ssh.png" alt="ok" width="20%" /><br />
+        <ul>
+          <li><a href="linux.01.html">리눅스 Font 삭제</a></li>
+          <li><a href="linux.02.html">리눅스 원격 디렉토리 마운트 SSHFS</a></li>
+          <li><a href="linux.03.html">리눅스 SSH 로 GUI 실행하기</a></li>
+        </ul>
+        <br /><br /><br />
+        <hr />
+        <h3>1. 리눅스 SSH 로 GUI 실행하기</h3>
+        <p>
+          원격 서버의 X11 Forwarding 설정을 하고, 접속할때는 -X 옵션을 사용 하자
+        </p>
+        <h4>< X11 Forwarding 설정 가이드 ></h4>
+        <pre><br>
+          # X11 server mode 설정 (/etc/ssh/sshd_config 설정)
+          # sshd_config 을 열어서 아래 3줄을 추가(주석 표시 제거<br>
+          <strong>vi /etc/ssh/sshd_config</strong><br>
+              X11Forwarding yes
+              X11DisplayOffset 10
+              X11UseLocalhost yes <br>
+          # ssh 재시작
+          <strong>sudo systemctl restart sshd_config</strong><br>
+          # 서버 접속할때 -X 옵션을 이용하자
+          <strong>ssh -X i972@192.168.0.2</strong><br>
+          # 실행 결과 확인, 제대로 실행된다면 ok
+          <strong>xclock</strong><br>
+        </pre>
+        <br />
+        <h3>2. 참고자료</h3>
+        <ul>
+          <li>
+            <a href="https://velog.io/@pikamon/Linux-1">
+              [Linux] SSH로 GUI 실행하기 (X11, PuTTY)</a
+            >
+          </li>
+          <li>
+            <a href="https://blog.naver.com/n_cloudplatform/221483526320"
+              >[이렇게 사용하세요!] 일반 서버 -X11 forwarding 설정 가이드
+              -Ubuntu 편-</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
