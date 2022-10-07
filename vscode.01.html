@@ -5,25 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
+    <script src="/js/import.js"></script>
     <title>VSCode Font</title>
   </head>
   <body>
     <h1><a href="index.html">Hakuna Matata</a></h1>
     <div id="grid">
       <ol>
-        <li><a href="linux.html">Linux</a></li>
-        <li><a href="vscode.html">Visual Studio Code</a></li>
-        <li><a href="3.html">JavaScript</a></li>
+        <div id="list_menu"></div>
       </ol>
       <div id="article">
         <h2>Visual Studio Code</h2>
         <img src="images/git.png" alt="ok" width="20%" /><br />
         <ul>
-          <li>
-            <a href="vscode.01.html"
-              >VSCode와 oh-my-zsh를 사용할 때 터미널 글꼴이 깨진다면</a
-            >
-          </li>
+          <div id="list_vscode"></div>
         </ul>
         <br /><br /><br />
         <hr />
@@ -52,5 +47,9 @@
         </ul>
       </div>
     </div>
+    <script>
+      importPage('list_menu');
+      importPage('list_vscode');
+    </script>
   </body>
 </html>

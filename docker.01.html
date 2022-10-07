@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="/js/import.js"></script>
+    <title>Docker</title>
+  </head>
+  <body>
+    <h1><a href="index.html">Hakuna Matata</a></h1>
+    <div id="grid">
+      <ol>
+        <div id="list_menu"></div>
+      </ol>
+      <div id="article">
+        <h2>Docker</h2>
+        <img src="images/settings.png" alt="ok" width="20%" /><br />
+        <ul>
+          <div id="list_docker"></div>
+        </ul>
+        <br /><br /><br />
+        <hr />
+        <h3>1. 리눅스용 Docker Desktop 설치</h3>
+        <ul>
+          <li>Docker의 패키지 저장소 를 설정</li>
+          <li>최신 DEB 패키지 를 다운로드</li>
+          <li>apt로 패키지를 설치</li>
+        </ul>
+        <h4>< Docker 패키지 저장소 설정 ></h4>
+        <pre><br>
+        <strong> # 설치에 필요한 패키지 설치</strong><br>
+        sudo apt-get update
+        sudo apt-get install \
+          ca-certificates \
+          curl \
+          gnupg \
+          lsb-release <br>
+        <strong># Docker의 공식 GPG 키 추가</strong><br>
+        sudo mkdir -p /etc/apt/keyrings
+        curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg <br>
+        <strong># 리포지토리를 설정</strong><br>
+        # 원문의 <strong>$(lsb_release -cs)</strong> 부분을 <strong>jammy</strong> 로 바꿔줘야 한다
+        # 리눅스민트의 VERSION_CODENAME=vanessa 를 찾는데
+        # 우분투의 UBUNTU_CODENAME=jammy 를 강제로 지정해 줘야
+        # 제대로된 저장소를 찾는다 <- 이거 찾느라 힘들었다 <br>
+        <strong>echo \
+        "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+        jammy stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null</strong> <br>
+        </pre>
+        <h4>< 최신 DEB 패키지 를 다운로드 ></h4>
+        <p># 참고 자료에 링크 첨부</p>
+        <h4>< 패키지를 설치 ></h4>
+        <pre><br>
+          sudo apt-get update
+          sudo apt-get install ./docker-desktop-&ltversion&gt-&ltarch&gt.deb <br>
+        </pre>
+        <h3>2. 참고자료</h3>
+        <ul>
+          <li>
+            <a href="https://docs.docker.com/desktop/install/ubuntu/">
+              우분투에 도커 데스크탑 설치</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository"
+              >저장소 설정</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://desktop.docker.com/linux/main/amd64/docker-desktop-4.12.0-amd64.deb?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64"
+              >Deb 패키지 다운로드</a
+            >
+          </li>
+        </ul>
+      </div>
+      <br />
+    </div>
+    <script>
+      importPage('list_menu');
+      importPage('list_docker');
+    </script>
+  </body>
+</html>
