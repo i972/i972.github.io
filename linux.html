@@ -5,19 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
+    <script src="/js/import.js"></script>
     <title>Linux</title>
   </head>
   <body>
     <h1><a href="index.html">Hakuna Matata</a></h1>
     <div id="grid">
       <ol>
-        <li><a href="linux.html">Linux</a></li>
-        <li><a href="vscode.html">Visual Studio Code</a></li>
-        <li><a href="">JavaScript</a></li>
+        <div id="list_menu"></div>
       </ol>
       <div id="article">
         <h2>Linux</h2>
         <img src="images/operating-system.png" alt="ok" width="20%" /><br />
+        <!-- <div w3-include-html="linux.list.html"></div> -->
         <ul>
           <li><a href="linux.01.html">리눅스 Font 삭제</a></li>
           <li><a href="linux.02.html">리눅스 원격 디렉토리 마운트 SSHFS</a></li>
@@ -25,5 +25,8 @@
         </ul>
       </div>
     </div>
+    <script>
+      importPage('list_menu');
+    </script>
   </body>
 </html>
