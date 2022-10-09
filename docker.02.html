@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="/js/import.js"></script>
+    <title>Docker Login</title>
+  </head>
+  <body>
+    <h1><a href="index.html">Hakuna Matata</a></h1>
+    <div id="grid">
+      <ol>
+        <div id="list_menu"></div>
+      </ol>
+      <div id="article">
+        <h2>Docker</h2>
+        <img src="images/log-in.png" alt="ok" width="20%" /><br />
+        <ul>
+          <div id="list_docker"></div>
+        </ul>
+        <br /><br /><br />
+        <hr />
+        <h3>1. Docker Desktop Sign in</h3>
+        <p>
+          Docker Desktop 처음 로그인 하려면<br />
+          gpp key 생성 -> gpg key 초기화 -> 로그인 <br />
+          ** 당연한 말이지만
+          <a href="https://hub.docker.com/">Docker Hub</a> 가입을 먼저 해야 된다
+        </p>
+        <h4>&lt; gpg 키 생성 및 초기화 &gt;</h4>
+        <pre><code>
+          # gpg2 key 생성
+          # 이름 -> 이메일 -> (o)key 순서대로 입력 -> 암호 입력<br>
+          <strong>gpg --generate-key </strong><br> 
+          # gpg2 초기화
+          # ~/.password-store/.gpg-id 
+          # gpg 키는 위 파일에 저장된다 <br>
+          <strong>pass init</strong> 7865BA9185AFA2C26C5B505669FC4F36530097C2
+        </code></pre>
+        <h3>2. 참고자료</h3>
+        <ul>
+          <li>
+            <a href="https://docs.docker.com/desktop/get-started/">
+              Sign in to Docker Desktop</a
+            >
+          </li>
+        </ul>
+        <br />
+      </div>
+    </div>
+    <script>
+      importPage('list_menu');
+      importPage('list_docker');
+    </script>
+  </body>
+</html>

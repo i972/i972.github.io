@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
     <script src="/js/import.js"></script>
-    <title>Docker</title>
+    <title>Docker Install</title>
   </head>
   <body>
     <h1><a href="index.html">Hakuna Matata</a></h1>
@@ -30,17 +30,17 @@
         </ul>
         <h4>< Docker 패키지 저장소 설정 ></h4>
         <pre><br>
-        <strong> # 설치에 필요한 패키지 설치</strong><br>
-        sudo apt-get update
+        # 설치에 필요한 패키지 설치<br>
+        <strong>sudo apt-get update
         sudo apt-get install \
           ca-certificates \
           curl \
           gnupg \
-          lsb-release <br>
-        <strong># Docker의 공식 GPG 키 추가</strong><br>
-        sudo mkdir -p /etc/apt/keyrings
-        curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg <br>
-        <strong># 리포지토리를 설정</strong><br>
+          lsb-release</strong> <br>
+        # Docker의 공식 GPG 키 추가<br>
+        <strong>sudo mkdir -p /etc/apt/keyrings
+        curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg </strong><br>
+        # 리포지토리를 설정<br>
         # 원문의 <strong>$(lsb_release -cs)</strong> 부분을 <strong>jammy</strong> 로 바꿔줘야 한다
         # 리눅스민트의 VERSION_CODENAME=vanessa 를 찾는데
         # 우분투의 UBUNTU_CODENAME=jammy 를 강제로 지정해 줘야
