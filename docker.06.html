@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="/js/import.js"></script>
+    <title>Docker exec</title>
+  </head>
+  <body>
+    <h1><a href="index.html">Hakuna Matata</a></h1>
+    <div id="grid">
+      <ol>
+        <div id="list_menu"></div>
+      </ol>
+      <div id="article">
+        <h2>Docker</h2>
+        <img src="images/exe.png" alt="ok" width="20%" /><br />
+        <ul>
+          <div id="list_docker"></div>
+        </ul>
+        <br /><br /><br />
+        <hr />
+        <h3>1. Docker 명령어 실행 exec</h3>
+        <p>컨테이너 안으로 들어 가서 container 를 수정해 보자</p>
+        <pre><br>
+        # 컨테이너 내부의 명령을 실행해 보자 - exec
+        # docker exec [컨테이너이름] [명령어]
+        $ <strong>docker exec ws1 pwd</strong><br>
+        # 컨테이너에 계속 머물면서 명령을 실행 - exec -it
+        $ <strong>docker exec -it ws1 /bin/bash</strong><br>
+        # 컨테이너 탈출 - exit
+        $ <strong>exit</strong><br>
+        </pre>
+        <h3>3. 참고자료</h3>
+        <ul>
+          <li>
+            <a
+              href="https://www.youtube.com/watch?v=P0ZFyB4iQd0&list=PLuHgQVnccGMDeMJsGq2O-55Ymtx0IdKWf&index=6"
+            >
+              생활코딩 Docker 입문수업 - 6. 명령어 실행</a
+            >
+          </li>
+        </ul>
+        <br />
+      </div>
+    </div>
+    <script>
+      importPage('list_menu');
+      importPage('list_docker');
+    </script>
+  </body>
+</html>

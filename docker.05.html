@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="/js/import.js"></script>
+    <title>Docker network</title>
+  </head>
+  <body>
+    <h1><a href="index.html">Hakuna Matata</a></h1>
+    <div id="grid">
+      <ol>
+        <div id="list_menu"></div>
+      </ol>
+      <div id="article">
+        <h2>Docker</h2>
+        <img src="images/global-network.png" alt="ok" width="20%" /><br />
+        <ul>
+          <div id="list_docker"></div>
+        </ul>
+        <br /><br /><br />
+        <hr />
+        <h3>1. Docker 네트워크 -p 8000:80</h3>
+        <p>
+          도커 host 와 container 를 네트워크적으로 연결하는 방법
+          <img
+            src="images/docker_network.jpeg"
+            alt="docker network"
+            width="90%"
+          />
+        </p>
+        <pre><br>
+        # 도커 네트워크 - host 와 container 연결
+        $ <strong>docker run --name ws2 -p 8000:80 httpd</strong><br>
+        # 접속확인 - 웹브라우저의 주소창에 입력
+          <strong>192.168.0.2:8000</strong><br>
+        </pre>
+        <h3>3. 참고자료</h3>
+        <ul>
+          <li>
+            <a
+              href="https://www.youtube.com/watch?v=SJFO2w5Q2HI&list=PLuHgQVnccGMDeMJsGq2O-55Ymtx0IdKWf&index=5"
+            >
+              생활코딩 Docker 입문수업 - 5. 네트워크</a
+            >
+          </li>
+        </ul>
+        <br />
+      </div>
+    </div>
+    <script>
+      importPage('list_menu');
+      importPage('list_docker');
+    </script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="/js/import.js"></script>
+    <title>Docker volume</title>
+  </head>
+  <body>
+    <h1><a href="index.html">Hakuna Matata</a></h1>
+    <div id="grid">
+      <ol>
+        <div id="list_menu"></div>
+      </ol>
+      <div id="article">
+        <h2>Docker</h2>
+        <img src="images/folder.png" alt="ok" width="20%" /><br />
+        <ul>
+          <div id="list_docker"></div>
+        </ul>
+        <br /><br /><br />
+        <hr />
+        <h3>1. Docker 호스트와 컨테이너의 파일시스템 연결 -v</h3>
+        <p>
+          컨테이너와 호스트의 파일시스템을 연결<br />
+          호스트의 파일시스템을 통해 변경된 내용이 컨테이너의 파일시스템에<br />
+          자동으로 연동되게 만들어 보자
+        </p>
+        <img src="/images/docker_volume.jpeg" alt="docker volume" width="90%" />
+        <pre><br>
+        # volume 을 통해 파일 시스템 연결 -v
+        $ <strong>docker run -v ~/문서/docker/htdocs:/usr/local/apache2/htdocs httpd</strong><br>
+        # 포트, 이름, 볼륨을 한번에...
+        $ <strong>docker run --name ws2 -p 7778:80 -v ~/문서/docker/htdocs:/usr/local/apache2/htdocs httpd</strong><br>
+        # sshfs 를 이용한 원격 접속
+        # sshfs [리모트서버ip]:[host 디렉토리][remote 디렉토리]
+        $ <strong>sshfs hp:~/문서/docker/htdocs ~/문서/docker/htdocs </strong><br>
+        </pre>
+        <h3>3. 참고자료</h3>
+        <ul>
+          <li>
+            <a
+              href="https://www.youtube.com/watch?v=AmSKD4p-jhw&list=PLuHgQVnccGMDeMJsGq2O-55Ymtx0IdKWf&index=7"
+            >
+              생활코딩 Docker 입문수업 - 7. 호스트와 컨테이너의
+              파일시스템 연결</a
+            >
+          </li>
+          <li><a href="linux.02.html">리눅스 원격 디렉토리 마운트 SSHFS</a></li>
+        </ul>
+        <br />
+      </div>
+    </div>
+    <script>
+      importPage('list_menu');
+      importPage('list_docker');
+    </script>
+  </body>
+</html>

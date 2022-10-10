@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="/js/import.js"></script>
+    <title>Docker run</title>
+  </head>
+  <body>
+    <h1><a href="index.html">Hakuna Matata</a></h1>
+    <div id="grid">
+      <ol>
+        <div id="list_menu"></div>
+      </ol>
+      <div id="article">
+        <h2>Docker</h2>
+        <img
+          src="images/walker-or-runner-sportive-stick-man.png"
+          alt="ok"
+          width="20%"
+        /><br />
+        <ul>
+          <div id="list_docker"></div>
+        </ul>
+        <br /><br /><br />
+        <hr />
+        <h3>1. Docker 컨테이너 run</h3>
+        <p>하나의 image 는 여러개의 container 를 만들 수 있다.</p>
+        <pre><br>
+        # container 생성
+        $ <strong>docker run httpd</strong><br>
+        # container 생성 - --name 이름추가
+        $ <strong>docker run --name ws2 httpd</strong><br>
+        # container 확인 - run
+        $ <strong>docker ps</strong><br>
+        # container 중지 - stop, 컨테이너가 삭제된 것은 아니다
+        $ <strong>docker stop ws1</strong><br>
+        # container 확인 - run & stop
+        $ <strong>docker ps -a</strong><br>
+        # container 재실행 - start
+        $ <strong>docker start ws1</strong><br>
+        </pre>
+        <h3>2. Docker container/image 삭제</h3>
+
+        <pre><br>
+        # container 삭제 - rm, 실행중인 컨데이너는 stop 한뒤에 삭제해야 된다
+        $ <strong>docker rm ws1</strong><br>
+        # container 삭제 - --force, 강제로 실행중인 컨테이너 삭제
+        $ <strong>docker rm --force ws1</strong><br>
+        # image 삭제- rmi, remove image
+        $ <strong>docker rmi httpd</strong><br>
+        </pre>
+        <h3>3. 참고자료</h3>
+        <ul>
+          <li>
+            <a
+              href="https://www.youtube.com/watch?v=iLcUr0EQdrM&list=PLuHgQVnccGMDeMJsGq2O-55Ymtx0IdKWf&index=4"
+            >
+              생활코딩 Docker 입문수업 - 4. 컨테이너 run</a
+            >
+          </li>
+        </ul>
+        <br />
+      </div>
+    </div>
+    <script>
+      importPage('list_menu');
+      importPage('list_docker');
+    </script>
+  </body>
+</html>
