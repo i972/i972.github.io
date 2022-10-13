@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
     <script src="/js/import.js"></script>
-    <title>Docker</title>
+    <title>Docker compose</title>
   </head>
   <body>
     <h1><a href="index.html">Hakuna Matata</a></h1>
@@ -16,10 +16,27 @@
       </ol>
       <div id="article">
         <h2><a href="docker.html">Docker</a></h2>
-        <img src="images/docker.png" alt="ok" width="20%" /><br />
+        <img src="images/compose.png" alt="ok" width="20%" /><br />
         <ul>
           <div id="list_docker"></div>
         </ul>
+        <br /><br /><br />
+        <hr />
+        <h3>1. Docker compose</h3>
+        <p>복잡한 도커 컨테이너 제어하기</p>
+        <pre><br>
+        # volume 을 통해 파일 시스템 연결 -v
+        $ <strong>docker run -v ~/문서/docker/htdocs:/usr/local/apache2/htdocs httpd</strong><br>
+        </pre>
+        <h3>3. 참고자료</h3>
+        <ul>
+          <li>
+            <a href="https://www.youtube.com/watch?v=EK6iYRCIjYs"
+              >Docker compose 를 이용해서 복잡한 도커 컨테이너를 제어하기</a
+            >
+          </li>
+        </ul>
+        <br />
       </div>
     </div>
     <script>
